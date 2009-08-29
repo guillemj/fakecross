@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+triplet=i486-linux-gnu-gcc
+
+case $1 in
+-dumpmachine)
+  echo $triplet
+  exit 0
+  ;;
+esac
+
+exec gcc -m32 "$@"
+
