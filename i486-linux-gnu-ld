@@ -2,4 +2,4 @@
 
 set -e
 
-exec ld -melf_i386 "$@"
+exec ld -belf32-i386 "$@"
