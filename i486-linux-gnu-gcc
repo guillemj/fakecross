@@ -2,7 +2,7 @@
 
 set -e
 
-triplet=i486-linux-gnu-gcc
+triplet=i486-linux-gnu
 
 case $1 in
 -dumpmachine)
