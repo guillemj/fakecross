@@ -12,4 +12,3 @@ case $1 in
 esac
 
 exec gcc -m32 "$@"
-

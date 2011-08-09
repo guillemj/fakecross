@@ -1,3 +1,2 @@
 #!/bin/sh
 exec strip -O elf32-i386 "$@"
-
