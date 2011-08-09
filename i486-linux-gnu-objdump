@@ -1,5 +1,2 @@
 #!/bin/sh
-
-set -e
-
 exec objdump -b elf32-i386 "$@"

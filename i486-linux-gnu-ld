@@ -1,5 +1,2 @@
 #!/bin/sh
-
-set -e
-
 exec ld -belf32-i386 "$@"
