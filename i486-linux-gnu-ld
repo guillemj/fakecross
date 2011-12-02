@@ -1,2 +1,2 @@
 #!/bin/sh
-exec ld -belf32-i386 "$@"
+exec ld -melf_i386 -belf32-i386 --oformat=elf32-i386 "$@"

@@ -11,4 +11,4 @@ case $1 in
   ;;
 esac
 
-exec gcc -m32 "$@"
+exec gcc -march=i586 -m32 "$@"
