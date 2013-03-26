@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+triplet=i486-linux-gnu
+
+case $1 in
+-dumpmachine)
+  echo $triplet
+  exit 0
+  ;;
+esac
+
+exec g++ -march=i586 -m32 "$@"
