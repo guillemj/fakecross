@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+set -u
+
+arch=$1
+
+. "arch/${arch}.conf"
+
+for templ in templ/*; do
+  dest="$GNU_TRIPLET-`basename $templ`"
+  echo "Generating $dest"
+  sed -e "s/@BFD_NAME@/$BFD_NAME/" \
+      -e "s/@BFD_EMUL@/$BFD_EMUL/" \
+      -e "s/@GCC_MULTILIB@/$GCC_MULTILIB/" \
+      -e "s/@GCC_ARCH@/$GCC_ARCH/" \
+      -e "s/@GNU_TRIPLET@/$GNU_TRIPLET/" \
+      <$templ >$dest
+  chmod a+x $dest
+done

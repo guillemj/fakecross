@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+-dumpmachine)
+  echo @GNU_TRIPLET@
+  exit 0
+  ;;
+esac
+
+exec gcc -march=@GCC_ARCH@ -m@GCC_MULTILIB@ "$@"

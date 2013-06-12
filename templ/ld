@@ -1,0 +1,2 @@
+#!/bin/sh
+exec ld -m @BFD_EMUL@ -b @BFD_NAME@ --oformat=@BFD_NAME@ "$@"

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec strip -F @BFD_NAME@ "$@"

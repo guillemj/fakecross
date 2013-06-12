@@ -1,2 +1,0 @@
-#!/bin/sh
-exec objcopy -F elf32-i386 "$@"
