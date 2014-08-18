@@ -10,11 +10,11 @@ arch=$1
 for templ in templ/*; do
   dest="$GNU_TRIPLET-`basename $templ`"
   echo "Generating $dest"
-  sed -e "s/@BFD_NAME@/$BFD_NAME/" \
-      -e "s/@BFD_EMUL@/$BFD_EMUL/" \
-      -e "s/@GCC_MULTILIB@/$GCC_MULTILIB/" \
-      -e "s/@GCC_ARCH@/$GCC_ARCH/" \
-      -e "s/@GNU_TRIPLET@/$GNU_TRIPLET/" \
+  sed -e "s/@BFD_NAME@/$BFD_NAME/g" \
+      -e "s/@BFD_EMUL@/$BFD_EMUL/g" \
+      -e "s/@GCC_MULTILIB@/$GCC_MULTILIB/g" \
+      -e "s/@GCC_ARCH@/$GCC_ARCH/g" \
+      -e "s/@GNU_TRIPLET@/$GNU_TRIPLET/g" \
       <$templ >$dest
   chmod a+x $dest
 done
