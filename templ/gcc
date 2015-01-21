@@ -9,4 +9,6 @@ case "$1" in
   ;;
 esac
 
-exec gcc -march=@GCC_ARCH@ -m@GCC_MULTILIB@ "$@"
+exec gcc -march=@GCC_ARCH@ -m@GCC_MULTILIB@ \
+         --no-sysroot-suffix -B/usr/lib/gcc/@GNU_TRIPLET@/@GCC_VERSION@ \
+         -isystem=/usr/include/@GNU_TRIPLET@ "$@"

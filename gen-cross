@@ -4,6 +4,7 @@ set -e
 set -u
 
 arch=$1
+GCC_VERSION=${2:-$(gcc -dumpversion | cut -d. -f-2)}
 
 . "arch/${arch}.conf"
 
@@ -14,6 +15,7 @@ for templ in templ/*; do
       -e "s/@BFD_EMUL@/$BFD_EMUL/g" \
       -e "s/@GCC_MULTILIB@/$GCC_MULTILIB/g" \
       -e "s/@GCC_ARCH@/$GCC_ARCH/g" \
+      -e "s/@GCC_VERSION@/$GCC_VERSION/g" \
       -e "s/@GNU_TRIPLET@/$GNU_TRIPLET/g" \
       <$templ >$dest
   chmod a+x $dest
